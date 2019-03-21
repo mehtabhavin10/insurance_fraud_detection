@@ -1,0 +1,659 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Concept - Bootstrap 4 Admin Dashboard Template Google Map</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static '/assets/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static '/assets/vendor/fonts/circular-std/style.css" rel="stylesheet' %}">
+    <link rel="stylesheet" href="{% static '/assets/libs/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/vendor/fonts/fontawesome/css/fontawesome-all.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/vendor/jvectormap/jquery-jvectormap-2.0.2.css' %}">
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+         <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="index.html">Fraud Analysis</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+<!--                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <li class="nav-item">
+                            <div id="custom-search" class="top-search-bar">
+                                <input class="form-control" type="text" placeholder="Search..">
+                            </div>
+                        </li>&ndash;&gt;
+                        &lt;!&ndash;<li class="nav-item dropdown notification">
+                            <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
+                                <li>
+                                    <div class="notification-title"> Notification</div>
+                                    <div class="notification-list">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action active">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="{% static 'assets/images/avatar-2.jpg' %}" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Jeremy Rakestraw</span>accepted your invitation to join the team.
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="{% static 'assets/images/avatar-3.jpg' %}" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">John Abraham </span>is now following you
+                                                        <div class="notification-date">2 days ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="{% static 'assets/images/avatar-4.jpg' %}" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Monaan Pechi</span> is watching your main repository
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="{% static 'assets/images/avatar-5.jpg' %}" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Jessica Caruso</span>accepted your invitation to join the team.
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-footer"> <a href="#">View all notifications</a></div>
+                                </li>
+                            </ul>
+                        </li>-->
+                        <!--<li class="nav-item dropdown connection">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
+                            <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
+                                <li class="connection-list">
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="{% static 'assets/images/github.png' %}" alt="" > <span>Github</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="{% static 'assets/images/dribbble.png' %}" alt="" > <span>Dribbble</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="{% static 'assets/images/dropbox.png' %}" alt="" > <span>Dropbox</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="{% static 'assets/images/bitbucket.png' %}" alt=""> <span>Bitbucket</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="{% static 'assets/images/mail_chimp.png' %}" alt="" ><span>Mail chimp</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="{% static 'assets/images/slack.png' %}" alt="" > <span>Slack</span></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="conntection-footer"><a href="#">More</a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{% static 'assets/images/avatar-1.jpg' %}" alt="" class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
+                                    <span class="status"></span><span class="ml-2">Available</span>
+                                </div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                            </div>
+                        </li>
+                    </ul>-->
+                </div>
+            </nav>
+        </div>
+
+
+
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                       <!--     <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                    &lt;!&ndash;            <div id="submenu-1" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        &lt;!&ndash;<li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">E-Commerce</a>
+                                            <div id="submenu-1-2" class="collapse submenu" style="">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="index.html">E Commerce Dashboard</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="ecommerce-product.html">Product List</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="ecommerce-product-single.html">Product Single</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="ecommerce-product-checkout.html">Product Checkout</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>&ndash;&gt;
+                    &lt;!&ndash;                    <li class="nav-item">
+                                            <a class="nav-link" href="dashboard-finance.html">Finance</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="dashboard-sales.html">Sales</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">Infulencer</a>
+                                            <div id="submenu-1-1" class="collapse submenu" style="">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="dashboard-influencer.html">Influencer</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="influencer-finder.html">Influencer Finder</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="influencer-profile.html">Influencer Profile</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>&ndash;&gt;
+                                    </ul>
+                                </div>&ndash;&gt;
+                            </li>-->
+                            <!--<li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>UI Elements</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/cards.html">Cards <span class="badge badge-secondary">New</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/general.html">General</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/carousel.html">Carousel</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/listgroup.html">List Group</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/typography.html">Typography</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/accordions.html">Accordions</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/tabs.html">Tabs</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>-->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-chart-pie"></i>Chart</a>
+                                <div id="submenu-3" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <!--<li class="nav-item">
+                                            <a class="nav-link" href="pages/chart-chartist.html">Chartist Charts</a>
+                                        </li>-->
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/analysis/charts">Pre Analysis</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/analysis/charts2">After Analysis</a>
+                                        </li>
+
+
+                                       <!-- <li class="nav-item">
+                                            <a class="nav-link" href="pages/chart-sparkline.html">Sparkline</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/chart-gauge.html">Guage</a>
+                                        </li>-->
+                                    </ul>
+                                </div>
+                            </li>
+
+
+
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fab fa-fw fa-wpforms"></i>Maps</a>
+                                <div id="submenu-4" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/analysis/Maps">Analysis Maps</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </li>
+
+                           <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fas fa-fw fa-file"></i> Forms </a>
+                                <div id="submenu-6" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                         <li class="nav-item">
+                                            <a class="nav-link" href="pages/form-validation.html">Parsely Validations</a>
+                                        </li>
+                                       <!-- <li class="nav-item">
+                                            <a class="nav-link" href="pages/blank-page-header.html">Blank Page Header</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/login.html">Login</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/404-page.html">404 page</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/sign-up.html">Sign up Page</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/forgot-password.html">Forgot Password</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/pricing.html">Pricing Tables</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/timeline.html">Timeline</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/calendar.html">Calendar</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/sortable-nestable-lists.html">Sortable/Nestable List</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/widgets.html">Widgets</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/media-object.html">Media Objects</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/cropper-image.html">Cropper</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/color-picker.html">Color Picker</a>
+                                        </li>-->
+                                    </ul>
+                                </div>
+                            </li>
+                            <!--<li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-7"><i class="fas fa-fw fa-inbox"></i>Apps <span class="badge badge-secondary">New</span></a>
+                                <div id="submenu-7" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/inbox.html">Inbox</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/email-details.html">Email Detail</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/email-compose.html">Email Compose</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/message-chat.html">Message Chat</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-8" aria-controls="submenu-8"><i class="fas fa-fw fa-columns"></i>Icons</a>
+                                <div id="submenu-8" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/icon-fontawesome.html">FontAwesome Icons</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/icon-material.html">Material Icons</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/icon-simple-lineicon.html">Simpleline Icon</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/icon-themify.html">Themify Icon</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/icon-flag.html">Flag Icons</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/icon-weather.html">Weather Icon</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
+                                <div id="submenu-9" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/map-google.html">Google Maps</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/map-vector.html">Vector Maps</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>-->
+                            <!--<li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-10" aria-controls="submenu-10"><i class="fas fa-f fa-folder"></i>Menu Level</a>
+                                <div id="submenu-10" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Level 1</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-11" aria-controls="submenu-11">Level 2</a>
+                                            <div id="submenu-11" class="collapse submenu" style="">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Level 1</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Level 2</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Level 3</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>-->
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content">
+                <!-- ============================================================== -->
+                <!-- pageheader -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- end pageheader -->
+                <!-- ============================================================== -->
+                <!--<div class="row">-->
+                    <!--&lt;!&ndash; ============================================================== &ndash;&gt;-->
+                    <!--&lt;!&ndash; world map &ndash;&gt;-->
+                    <!--&lt;!&ndash; ============================================================== &ndash;&gt;-->
+                    <!--<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">-->
+                        <!--<div class="card">-->
+                            <!--<h5 class="card-header">World Map</h5>-->
+                            <!--<div class="card-body">-->
+                                <!--<div id="world-map-markers" style="height: 450px;"></div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; ============================================================== &ndash;&gt;-->
+                    <!--&lt;!&ndash;end world map &ndash;&gt;-->
+                    <!--&lt;!&ndash; ============================================================== &ndash;&gt;-->
+                    <!--&lt;!&ndash; ============================================================== &ndash;&gt;-->
+                    <!--&lt;!&ndash;india &ndash;&gt;-->
+                    <!--&lt;!&ndash; ============================================================== &ndash;&gt;-->
+                    <!--<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">-->
+                        <!--<div class="card">-->
+                            <!--<h5 class="card-header">India</h5>-->
+                            <!--<div class="card-body">-->
+                                <!--<div id="india" style="height: 450px;"></div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; ============================================================== &ndash;&gt;-->
+                    <!--&lt;!&ndash;end india &ndash;&gt;-->
+                    <!--&lt;!&ndash; ============================================================== &ndash;&gt;-->
+                <!--</div>-->
+                <div class="row">
+                    <!-- ============================================================== -->
+                    <!--USA -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Fraud States Detected (USA)</h5>
+                            <div class="card-body">
+                                <div id="usa" style="height: 450px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end USA -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Australia map -->
+                    <!-- ============================================================== -->
+                    <!--<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">-->
+                        <!--<div class="card">-->
+                            <!--<h5 class="card-header">Australia Map</h5>-->
+                            <!--<div class="card-body">-->
+                                <!--<div id="australia" style="height: 450px;"></div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!-- ============================================================== -->
+                    <!-- end Australia map -->
+                    <!-- ============================================================== -->
+                </div>
+                <!--<div class="row">-->
+                    <!--&lt;!&ndash; ============================================================== &ndash;&gt;-->
+                    <!--&lt;!&ndash; UK map &ndash;&gt;-->
+                    <!--&lt;!&ndash; ============================================================== &ndash;&gt;-->
+                    <!--<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">-->
+                        <!--<div class="card">-->
+                            <!--<h5 class="card-header">Uk Map</h5>-->
+                            <!--<div class="card-body">-->
+                                <!--<div id="uk" style="height: 450px;"></div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; ============================================================== &ndash;&gt;-->
+                    <!--&lt;!&ndash; UK map &ndash;&gt;-->
+                    <!--&lt;!&ndash; ============================================================== &ndash;&gt;-->
+                <!--</div>-->
+                <!-- ============================================================== -->
+                <!-- footer -->
+                <!-- ============================================================== -->
+
+                <!-- ============================================================== -->
+                <!-- end footer -->
+                <!-- ============================================================== -->
+            </div>
+        </div>
+    </div>
+        <!-- ============================================================== -->
+        <!-- end main wrapper -->
+        <!-- ============================================================== -->
+        <!-- Optional JavaScript -->
+        <script src="{% static '/assets/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static '/assets/vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
+        <script src="{% static '/assets/vendor/slimscroll/jquery.slimscroll.js' %}"></script>
+        <script src="{% static '/assets/libs/js/main-js.js' %}"></script>
+        <script src="{% static '/assets/libs/js/gmaps.min.js' %}"></script>
+        <!-- jvactormap js -->
+        <script src="{% static '/assets/vendor/jvectormap/jquery-jvectormap-2.0.2.min.js' %}"></script>
+        <script src="{% static '/assets/vendor/jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+        <script src="{% static '/assets/vendor/jvectormap/jquery-jvectormap-in-mill.js' %}"></script>
+        <script src="{% static '/assets/vendor/jvectormap/jquery-jvectormap-us-aea-en.js' %}"></script>
+        <script src="{% static '/assets/vendor/jvectormap/jquery-jvectormap-uk-mill-en.js' %}"></script>
+        <script src="{% static '/assets/vendor/jvectormap/jquery-jvectormap-au-mill.js' %}"></script>
+        <!--<script src="{% static '/assets/libs/js/jvectormap.custom.js' %}"></script>-->
+        <script>
+                 jQuery('#world-map-markers').vectorMap({
+            map: 'world_mill_en',
+            backgroundColor: 'transparent',
+            borderColor: '#818181',
+            borderOpacity: 0.25,
+            borderWidth: 1,
+            zoomOnScroll: false,
+            color: '#8b94d6',
+            regionStyle: {
+                initial: {
+                    fill: '#8b94d6'
+                }
+            },
+            markerStyle: {
+                initial: {
+                    r: 9,
+                    'fill': '#fff',
+                    'fill-opacity': 1,
+                    'stroke': '#000',
+                    'stroke-width': 5,
+                    'stroke-opacity': 0.4
+                },
+            },
+            enableZoom: true,
+            hoverColor: '#8b94d6',
+            markers: {{lat_long|safe}},
+
+              <!--{latLng: [41.90, 12.45], name: 'Vatican City'},-->
+              <!--{latLng: [43.73, 7.41], name: 'Monaco'},-->
+              <!--{latLng: [-0.52, 166.93], name: 'Nauru'},-->
+              <!--{latLng: [-8.51, 179.21], name: 'Tuvalu'},-->
+              <!--{latLng: [43.93, 12.46], name: 'San Marino'},-->
+              <!--{latLng: [47.14, 9.52], name: 'Liechtenstein'},-->
+              <!--{latLng: [7.11, 171.06], name: 'Marshall Islands'},-->
+              <!--{latLng: [17.3, -62.73], name: 'Saint Kitts and Nevis'},-->
+              <!--{latLng: [3.2, 73.22], name: 'Maldives'},-->
+              <!--{latLng: [35.88, 14.5], name: 'Malta'},-->
+              <!--{latLng: [12.05, -61.75], name: 'Grenada'},-->
+              <!--{latLng: [13.16, -61.23], name: 'Saint Vincent and the Grenadines'},-->
+              <!--{latLng: [13.16, -59.55], name: 'Barbados'},-->
+              <!--{latLng: [17.11, -61.85], name: 'Antigua and Barbuda'},-->
+              <!--{latLng: [-4.61, 55.45], name: 'Seychelles'},-->
+              <!--{latLng: [7.35, 134.46], name: 'Palau'},-->
+              <!--{latLng: [42.5, 1.51], name: 'Andorra'},-->
+              <!--{latLng: [14.01, -60.98], name: 'Saint Lucia'},-->
+              <!--{latLng: [6.91, 158.18], name: 'Federated States of Micronesia'},-->
+              <!--{latLng: [1.3, 103.8], name: 'Singapore'},-->
+              <!--{latLng: [1.46, 173.03], name: 'Kiribati'},-->
+              <!--{latLng: [-21.13, -175.2], name: 'Tonga'},-->
+              <!--{latLng: [15.3, -61.38], name: 'Dominica'},-->
+              <!--{latLng: [-20.2, 57.5], name: 'Mauritius'},-->
+              <!--{latLng: [26.02, 50.55], name: 'Bahrain'},-->
+              <!--{latLng: [0.33, 6.73], name: 'São Tomé and Príncipe'}-->
+
+
+
+
+            hoverOpacity: null,
+            normalizeFunction: 'linear',
+            scaleColors: ['#b6d6ff', '#005ace'],
+            selectedColor: '#c9dfaf',
+            selectedRegions: [],
+            showTooltip: true,
+            onRegionClick: function(element, code, region) {
+                var message = 'You clicked "' +
+                    region +
+                    '" which has the code: ' +
+                    code.toUpperCase();
+
+                alert(message);
+            }
+        });
+
+
+        $('#india').vectorMap({
+            map: 'in_mill',
+            backgroundColor: 'transparent',
+            zoomOnScroll: false,
+            regionStyle: {
+                initial: {
+                    fill: '#64ced3'
+                }
+            }
+        });
+
+
+        $('#usa').vectorMap({
+            map: 'us_aea_en',
+            backgroundColor: 'transparent',
+            zoomOnScroll: false,
+            regionStyle: {
+                initial: {
+                    fill: '#f87ca1'
+                }
+            },
+             markers: {{lat_long|safe}},
+             markerStyle: {
+                initial: {
+                    r: 9,
+                    'fill': '#fff',
+                    'fill-opacity': 1,
+                    'stroke': '#000',
+                    'stroke-width': 5,
+                    'stroke-opacity': 0.4
+                },
+            },
+        });
+
+
+
+        $('#australia').vectorMap({
+            map: 'au_mill',
+            backgroundColor: 'transparent',
+            zoomOnScroll: false,
+            regionStyle: {
+                initial: {
+                    fill: '#ffe174'
+                }
+            }
+        });
+
+        $('#uk').vectorMap({
+            map: 'uk_mill_en',
+            backgroundColor: 'transparent',
+            zoomOnScroll: false,
+            regionStyle: {
+                initial: {
+                    fill: '#ffa47f'
+                }
+            }
+        });
+        </script>
+</body>
+ 
+</html>
